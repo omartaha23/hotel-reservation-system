@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Room, Reservation, Complaint, Response
+from .models import *
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,13 +15,12 @@ class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
         fields = '__all__'
-
 class ComplaintSerializer(serializers.ModelSerializer):
     class Meta:
         model = Complaint
         fields = '__all__'
 
-class ResponseSerializer(serializers.ModelSerializer):
+class ComplaintSerializer(serializers.ModelSerializer):
     class Meta:
         model = Response
         fields = '__all__'

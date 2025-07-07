@@ -7,11 +7,6 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
-class Room(models.Model):
-    pricePerNight = models.FloatField()
-    capacity = models.IntegerField()
-    availability = models.BooleanField(default=True)
-
 class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
@@ -20,6 +15,10 @@ class Reservation(models.Model):
     numGuests = models.IntegerField()
     status = models.CharField(max_length=50)
 
+class Room(models.Model):
+    pricePerNight = models.FloatField()
+    capacity = models.IntegerField()
+    availability = models.BooleanField(default=True)
 class Complaint(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE)
@@ -27,7 +26,6 @@ class Complaint(models.Model):
     status = models.CharField(max_length=50)
     def __str__(self):
         return self.content
-
 class Response(models.Model):
     complaint = models.OneToOneField(Complaint, on_delete=models.CASCADE)
     content = models.CharField(max_length=100)

@@ -5,3 +5,4 @@ admin.site.register(Room)
 admin.site.register(Reservation)
 admin.site.register(Complaint)
 admin.site.register(Response)
+

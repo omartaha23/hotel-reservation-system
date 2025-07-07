@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import User, Room, Reservation, Complaint, Response
+from .models import User, Room, Reservation
 from .serializers import *
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -19,13 +19,11 @@ class ReservationViewSet(viewsets.ModelViewSet):
     serializer_class = ReservationSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['user']
-
 class ComplaintViewSet(viewsets.ModelViewSet):
     queryset = Complaint.objects.all()
     serializer_class = ComplaintSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['user']
-
+    filterset_fields = ['status']
 class ResponseViewSet(viewsets.ModelViewSet):
     queryset = Response.objects.all()
     serializer_class = ResponseSerializer
