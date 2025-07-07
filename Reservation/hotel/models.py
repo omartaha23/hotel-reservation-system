@@ -26,8 +26,3 @@ class Complaint(models.Model):
     status = models.CharField(max_length=50)
     def __str__(self):
         return self.content
-class Response(models.Model):
-    complaint = models.OneToOneField(Complaint, on_delete=models.CASCADE)
-    content = models.CharField(max_length=100)
-    def __str__(self):
-        return self.content

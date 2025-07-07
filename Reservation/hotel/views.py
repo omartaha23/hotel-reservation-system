@@ -24,8 +24,3 @@ class ComplaintViewSet(viewsets.ModelViewSet):
     serializer_class = ComplaintSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['status']
-class ResponseViewSet(viewsets.ModelViewSet):
-    queryset = Response.objects.all()
-    serializer_class = ResponseSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['complaint']

@@ -6,7 +6,8 @@ router.register(r'users', UserViewSet)
 router.register(r'rooms', RoomViewSet)
 router.register(r'reservations', ReservationViewSet)
 router.register(r'complaint', ComplaintViewSet)
-router.register(r'response', ResponseViewSet)
+
+
 urlpatterns = [
     path('', include(router.urls))
 ]

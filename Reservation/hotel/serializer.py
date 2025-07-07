@@ -17,10 +17,5 @@ class ReservationSerializer(serializers.ModelSerializer):
         fields = '__all__'
 class ComplaintSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Complaint
-        fields = '__all__'
-
-class ComplaintSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Response
+        model = Reservation
         fields = '__all__'
